@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Login Module</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/style.css">
+    <!-- jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</head>
+<!-- function to display order from database-->
+<body>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <div class="col-sm-3 receipt">
+            <h2>Hello Admin.</h2>
+            <h4>Below is a list of pending orders.</h4>
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-primary">Ticket number = phone number <br> Orders must be completed in list order</li>
+                {% for i in range(0, data|length) %}
+                    <li class="list-group-item list-group-item-secondary">{{data[i][0]}}    {{data[i][1]}}    {{data[i][2]}}    {{data[i][3]}} X {{data[i][4]}}</li>
+                {% endfor %}
+            </ul>
+            <form action="http://localhost:8000"><input type="submit" value="Return" class="btn btn-primary" /></form>
+        </div>
+    </div>
+</body>
+
+</html>

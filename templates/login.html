@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Creating login interface -->
+<head>
+    <title>Login Module</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./static/style.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<!-- Creating login and restricted rules -->
+<body>
+    <div class="topnav"><h1><center><b>Flipping Good Pizza</b></center></h1></div>
+    <center><img src="{{url_for('static', filename='logo.jpg')}}"
+    class="card-img-top" alt="Card image" style="width:200px;height:180px;"/></center>
+    <form action="http://localhost:8000/login" method="post">
+        <h3>Please enter your name and phone number to continue:</h3>
+        <!-- First letter of name have to be capital, only 2 to 20 alphabet characters are allowed-->
+        <div class="form-group">
+            <label for="name">Name: </label>
+            <input type="text" name="username" id="name" autofocus pattern="[A-Z][a-zA-Z]{1,20}" class="form-control" placeholder="Enter name" required>
+        </div>
+        <!--8 digits input only start with 2,3,5,6,9 number-->
+        <div class="form-group">
+            <label for="phone">Phone Number: </label>
+            <input type="tel" id="phone" name="phone" pattern="[23569]{1}[0-9]{7}" class="form-control" placeholder="Enter number" maxlength="8" required>
+        </div>
+        <input type="submit" value="submit" class="btn btn-primary" />
+    </form>
+</body>
+
+</html>

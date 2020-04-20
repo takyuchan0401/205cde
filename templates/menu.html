@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Login Module</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+
+<body>
+    <div class="topnav"><h1><center><b>Flipping Good Pizza</b></center></h1></div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+        <div class="col-sm-8">
+        <br />
+        <div class="card-deck">
+            <div class="col-sm-4">
+                <div class="card" style="max-width:319px;">
+                    <img src="{{url_for('static', filename='Hawaiian.jpg')}}"
+                        class="card-img-top" alt="Card image" style="width:319px;height:300px;"/>
+                    <div class="card-body">
+                        <h4 class="card-title"><b>Hawaiian Pizza</b></h4>
+                        <h4 class="card-title">S 10" $100 M 12" $125 L 15" $150</h4>
+                        <p class="card-text">Italian tomato sauce, Mozzarella & Parmesan Cheese, Parma Ham, Fresh cut pineapple, Crispy bacon.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card" style="max-width:319px;">
+                    <img src="{{url_for('static', filename='four-cheese-lover.jpg')}}"
+                    class="card-img-top" alt="Card image" style="width:319px;height:300px;"/>
+                
+                    <div class="card-body">
+                        <h4 class="card-title"><b>Four Cheese Lover Pizza</b></h4>
+                        <h4 class="card-title">S 10" $90 M 12" $130 L 15" $150</h4>
+                        <p class="card-text">Italian tomato sauce, Mozzarella & Parmesan & Cheddar & Buffalo Cheese, honey.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card" style="max-width:319px;">
+                    <img src="{{url_for('static', filename='home-special.jpg')}}"
+                    class="card-img-top" alt="Card image" style="width:319px;height:300px;"/>
+                
+                    <div class="card-body">
+                        <h4 class="card-title"><b>Home Special Pizza</b></h4>
+                        <h4 class="card-title">S 10" $100 M 12" $130 L 15" $160</h4>
+                        <p class="card-text">Italian tomato sauce, Mozzarella & Parmesan Cheese, Pepperoni, Truffle shrooms, Bell pepper, onions.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card" style="max-width:319px;">
+                    <img src="{{url_for('static', filename='Vegetables.jpg')}}"
+                    class="card-img-top" alt="Card image" style="width:319px;height:300px;"/>
+                
+                    <div class="card-body">
+                        <h4 class="card-title"><b>Vegetarian Pizza</b></h4>
+                        <h4 class="card-title">S 10" $100 M 12" $125 L 15" $150</h4>
+                        <p class="card-text">Italian Tomato Sauce, Mozzarella & Cheddar Cheese, Bell peppers, Onions, Spinach, Pineapple.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card" style="max-width:319px;">
+                    <img src="{{url_for('static', filename='Killerbee.jpg')}}"
+                    class="card-img-top" alt="Card image" style="width:319px;height:300px;"/>
+                
+                    <div class="card-body">
+                        <h4 class="card-title"><b>Killerbee Pizza</b></h4>
+                        <h4 class="card-title">S 10" $100 M 12" $125 L 15" $150</h4>
+                        <p class="card-text">Italian Tomato Sauce & Hot sauce, Mozarella & Cheddar Cheese, Pepperoni, Salami, Jalapeno, Honey.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="card" style="max-width:319px;">
+                    <img src="{{url_for('static', filename='carbonara-trufflemushroom.jpg')}}"
+                    class="card-img-top" alt="Card image" style="width:319px;height:300px;"/>
+                
+                    <div class="card-body">
+                        <h4 class="card-title"><b>Carbonara & Truffled Mushroom Pizza</b></h4>
+                        <h4 class="card-title">S 10" $130 M 12" $165 L 15" $200</h4>
+                        <p class="card-text">Carbonara sauce, onsen egg, Crispy Bacon, Truffled Mushroom, Mozzarella Cheese.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div class="col-sm-4">
+            <form action="http://localhost:8000/checkout" name="checkoutForm" onsubmit="return validateForm()" method="POST">
+                <h1>Shopping Cart</h1>
+                <div class="form-group row">
+                    <label for="pizza1" class="col-sm-6 col-form-label">Hawaiian Pizza</label>
+                    <div class="col-sm-3">
+                        <select class="custom-select" name="pizza1size">
+                            <option selected>Size</option>
+                            <option value="Small">S</option>
+                            <option value="Medium">M</option>
+                            <option value="Large">L</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="number" step="1" id="pizza1" min="0" max="5" value="0" name="pizza1">
+                    </div>                    
+                </div>
+                <div class="form-group row">
+                    <label for="pizza2" class="col-sm-6 col-form-label">Four Cheese Lover</label>
+                    <div class="col-sm-3">
+                        <select class="custom-select" name="pizza2size">
+                            <option selected>Size</option>
+                            <option value="Small">S</option>
+                            <option value="Medium">M</option>
+                            <option value="Large">L</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="number" step="1" id="pizza2" min="0" max="5" value="0" name="pizza2"> 
+                    </div>                    
+                </div>
+                <div class="form-group row">
+                    <label for="pizza3" class="col-sm-6 col-form-label">Home Special Pizza</label>
+                    <div class="col-sm-3">
+                        <select class="custom-select" name="pizza3size">
+                            <option selected>Size</option>
+                            <option value="Small">S</option>
+                            <option value="Medium">M</option>
+                            <option value="Large">L</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="number" step="1" id="pizza3" min="0" max="5" value="0" name="pizza3">
+                    </div>                    
+                </div>
+                <div class="form-group row">
+                    <label for="pizza4" class="col-sm-6 col-form-label">Vegetarian Pizza</label>
+                    <div class="col-sm-3">
+                        <select class="custom-select" name="pizza4size">
+                            <option selected>Size</option>
+                            <option value="Small">S</option>
+                            <option value="Medium">M</option>
+                            <option value="Large">L</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="number" step="1" id="pizza4" min="0" max="5" value="0" name="pizza4">
+                    </div>                    
+                </div>
+                <div class="form-group row">
+                    <label for="pizza5" class="col-sm-6 col-form-label">Killer Bee Pizza</label>
+                    <div class="col-sm-3">
+                        <select class="custom-select" name="pizza5size">
+                            <option selected>Size</option>
+                            <option value="Small">S</option>
+                            <option value="Medium">M</option>
+                            <option value="Large">L</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="number" step="1" id="pizza5" min="0" max="5" value="0" name="pizza5">
+                    </div>                    
+                </div>
+                <div class="form-group row">
+                    <label for="pizza6" class="col-sm-6 col-form-label">Carbonara Pizza</label>
+                    <div class="col-sm-3">
+                        <select class="custom-select" name="pizza6size">
+                            <option selected>Size</option>
+                            <option value="Small">S</option>
+                            <option value="Medium">M</option>
+                            <option value="Large">L</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <input type="number" step="1" id="pizza6" min="0" max="5" value="0" name="pizza6">
+                    </div>                    
+                </div>
+                <button type="submit" class="btn btn-primary">Checkout</button>
+                <input type="text"  id="guest" value= {{guest}} name="guest" hidden>
+                <input type="tel"  id="num" value= {{phone}} name="num" hidden>
+            </form>
+        </div>
+    </div>
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="{{ url_for('static', filename='js/formValidate.js') }}"></script>
+</body>
+</html>
